@@ -4,15 +4,39 @@ BattleTankIA is a programming game, where the goal is to develop a robot battle 
 
 ## The game
 
-Text...
+Text ...
 
 ### How to play
 
-Text...
+Text ...
 
-### How to code
+## Artificial Intelligence
 
-Text...
+Text ...
+
+### Tank Interface
+
+Text ...
+
+### Samples
+
+Text ...
+
+#### Finite State Machine Sample
+
+Text ...
+
+#### Behavior Tree
+
+Text ...
+
+#### Goal-Oriented Action Planning
+
+Text ...
+
+## References
+
+-   UNITY3D. Tanks Tutorial. Available in <https://unity3d.com/pt/learn/tutorials/s/tanks-tutorial>. Accessed September 20, 2019.
 
 ## Licença
 
