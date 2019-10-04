@@ -10,32 +10,31 @@ Text ...
 
 Text ...
 
-## Artificial Intelligence
+## How to code
 
 Text ...
 
-### Tank Interface
+## Samples
 
 Text ...
 
-### Samples
+### Finite State Machine (FSM)
 
 Text ...
 
-#### Finite State Machine Sample
+### Behavior Tree (BT)
 
 Text ...
 
-#### Behavior Tree
-
-Text ...
-
-#### Goal-Oriented Action Planning
+### Goal-Oriented Action Planning (GOAP)
 
 Text ...
 
 ## References
 
+-   ORKIN, JEFF. Goal-Oriented Action Planning (GOAP). Available in <http://alumni.media.mit.edu/~jorkin/goap.html>. Accessed September 20, 2019.
+-   PANDA BT. Panda BT: Behavior Script for Unity. Available in <http://www.pandabehaviour.com>. Accesed September 20, 2019.
+-   UNITY3D. Finite State AI with the Delegate Pattern. Available in <https://unity3d.com/pt/learn/tutorials/topics/navigation/finite-state-ai-delegate-pattern>. Accessed Semptember 21, 2019. 
 -   UNITY3D. Tanks Tutorial. Available in <https://unity3d.com/pt/learn/tutorials/s/tanks-tutorial>. Accessed September 20, 2019.
 
 ## Licença
