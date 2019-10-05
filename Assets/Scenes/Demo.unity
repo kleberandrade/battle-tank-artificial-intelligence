@@ -197,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189594068}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 22, y: 27, z: -18}
+  m_LocalPosition: {x: 0, y: 32.4, z: -47.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 880a27c686aeead4fb283d36800c391d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Width: 10
-  m_Depth: 9
+  m_Width: 7
+  m_Depth: 7
   m_TileSize: 10
   m_CornersTile:
   - {fileID: 789398701445140123, guid: b2b82d4cc8da6384e886d5bc31583769, type: 3}
@@ -245,7 +245,7 @@ MonoBehaviour:
   - {fileID: 3711823888118623365, guid: 007a750448862d040b9250547bf8702f, type: 3}
   - {fileID: 2327567104908728273, guid: 46726f99ef1e5e14a8bc9f86b34f5059, type: 3}
   - {fileID: 7167834380328394777, guid: 66a066e2f23459641a860b46b2e9d1b0, type: 3}
-  m_ObstacleRate: 0.3
+  m_ObstacleRate: 0.5
   m_Noise: 0.2
 --- !u!4 &1342788537
 Transform:

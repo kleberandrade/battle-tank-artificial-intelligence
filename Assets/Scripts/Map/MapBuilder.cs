@@ -26,13 +26,16 @@ public class MapBuilder : MonoBehaviour
 
     private void CreateMap()
     {
+        float halfWidth = (m_Width * m_TileSize - m_TileSize) * 0.5f;
+        float halfDepth = (m_Depth * m_TileSize - m_TileSize) * 0.5f;
+
         for (int x = 0; x < m_Width; x++)
         {
             for (int z = 0; z < m_Depth; z++)
             {
                 Vector3 position = Vector3.zero;
-                position.x = -m_Width * 0.5f + x * m_TileSize;
-                position.z = -m_Depth * 0.5f + z * m_TileSize;
+                position.x = -halfWidth + x * m_TileSize;
+                position.z = -halfDepth + z * m_TileSize;
 
                 if (!InstantiateBorderTile(x, z, position))
                 {
