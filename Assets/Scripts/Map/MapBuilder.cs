@@ -1,9 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
+[DefaultExecutionOrder(-200)]
 public class MapBuilder : MonoBehaviour
 {
+    public static MapBuilder Instance = null;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            CreateMap();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     [Header("Dimension")]
     public int m_Width = 6;
     public int m_Depth = 5;
@@ -19,15 +34,28 @@ public class MapBuilder : MonoBehaviour
     public float m_ObstacleRate = 0.3f;
     public float m_Noise = 0.2f;
 
+    [Header("Spawners")]
+    public string m_SpawnerTag = "Ground";
+    public List<Vector3> m_SpawnerPoints = new List<Vector3>();
+
+    [Header("Manager")]
+    public GameManager m_GameManager;
+    private GameObject m_ObstaclesParent;
+
     private void Start()
     {
-        CreateMap();
+        m_GameManager.gameObject.SetActive(true);
     }
 
     private void CreateMap()
     {
+        UnityEditor.AI.NavMeshBuilder.ClearAllNavMeshes();
+
         float halfWidth = (m_Width * m_TileSize - m_TileSize) * 0.5f;
         float halfDepth = (m_Depth * m_TileSize - m_TileSize) * 0.5f;
+
+        m_ObstaclesParent = new GameObject("Obstacles");
+        m_ObstaclesParent.transform.parent = transform;
 
         for (int x = 0; x < m_Width; x++)
         {
@@ -42,8 +70,14 @@ public class MapBuilder : MonoBehaviour
                     InstantiateLineTile(x, z, position);
                     InstantiateGroundTile(x, z, position);
                 }
+
+                CreateObstacle(position);
             }
+
+            m_SpawnerPoints.Shuffle();
         }
+
+        UnityEditor.AI.NavMeshBuilder.BuildNavMesh();
     }
 
     private void InstantiateGroundTile(int x, int z, Vector3 position)
@@ -53,8 +87,6 @@ public class MapBuilder : MonoBehaviour
 
         GameObject tile = GetRandomTile(m_GroundsTile, position);
         tile.transform.rotation = Quaternion.identity;
-
-        CreateObstacle(position);
     }
 
     private bool InstantiateBorderTile(int x, int z, Vector3 position)
@@ -123,6 +155,7 @@ public class MapBuilder : MonoBehaviour
 
         GameObject tile = Instantiate(tiles[index]);
         tile.transform.position = position;
+        tile.transform.parent = transform;
 
         return tile;
     }
@@ -130,6 +163,7 @@ public class MapBuilder : MonoBehaviour
     private void CreateObstacle(Vector3 position)
     {
         float rate = Random.Range(0.0f, 1.0f);
+
         if (rate < m_ObstacleRate)
         {
             int index = Random.Range(0, m_Obstacles.Length);
@@ -139,7 +173,12 @@ public class MapBuilder : MonoBehaviour
             position.z += Random.Range(-m_TileSize * m_Noise, m_TileSize * m_Noise);
 
             float rotate = Random.Range(0.0f, 360.0f);
-            Instantiate(m_Obstacles[index], position, Quaternion.Euler(Vector3.up * rotate));
+            GameObject obstacle = Instantiate(m_Obstacles[index], position, Quaternion.Euler(Vector3.up * rotate));
+            obstacle.transform.parent = m_ObstaclesParent.transform;
+        }
+        else
+        {
+            m_SpawnerPoints.Add(position);
         }
     }
 }

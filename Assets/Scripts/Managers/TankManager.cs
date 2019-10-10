@@ -5,12 +5,11 @@ using UnityEngine;
 public class TankManager
 {
     public Color m_PlayerColor;            
-    public Transform m_SpawnPoint;         
+    public Vector3 m_SpawnPoint;         
     [HideInInspector] public int m_PlayerNumber;             
     [HideInInspector] public string m_ColoredPlayerText;
     [HideInInspector] public GameObject m_Instance;          
     [HideInInspector] public int m_Wins;                     
-
 
     private TankMovement m_Movement;       
     private TankShooting m_Shooting;
@@ -53,8 +52,8 @@ public class TankManager
 
     public void Reset()
     {
-        m_Instance.transform.position = m_SpawnPoint.position;
-        m_Instance.transform.rotation = m_SpawnPoint.rotation;
+        m_Instance.transform.position = m_SpawnPoint + Vector3.up;
+        m_Instance.transform.rotation = Quaternion.Euler(Vector3.up * 360.0f);
 
         m_Instance.SetActive(false);
         m_Instance.SetActive(true);

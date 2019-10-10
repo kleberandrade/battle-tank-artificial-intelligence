@@ -14,7 +14,6 @@ public class TankAI : MonoBehaviour
 
     public Vector3 Position => m_MovementScript.Position;
 
-
     public List<Vector3> Targets => m_RadarScript.m_Targets;
 
     public bool HasTargetInRange => Targets.Count > 0;

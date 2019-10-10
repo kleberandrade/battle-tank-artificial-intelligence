@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591977129303195825}
-  m_Layer: 0
+  - component: {fileID: 8739784396444738643}
+  m_Layer: 10
   m_Name: Boxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &591977129303195825
 Transform:
@@ -34,6 +35,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &8739784396444738643
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2327567104908728273}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &1835203402795067447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,6 +62,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969685142733947775, guid: 957040e0b181ff74589c3833b3d99316,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7643104464514452714, guid: 957040e0b181ff74589c3833b3d99316,
         type: 3}
@@ -101,16 +123,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 498132198936148289, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566863997283508526, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 957040e0b181ff74589c3833b3d99316, type: 3}
 --- !u!4 &8315387391072675037 stripped
@@ -130,6 +142,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969685142733947775, guid: 957040e0b181ff74589c3833b3d99316,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7643104464514452714, guid: 957040e0b181ff74589c3833b3d99316,
         type: 3}
@@ -186,16 +203,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 498132198936148289, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566863997283508526, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 957040e0b181ff74589c3833b3d99316, type: 3}
 --- !u!4 &5707603523372898466 stripped
@@ -215,6 +222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969685142733947775, guid: 957040e0b181ff74589c3833b3d99316,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7643104464514452714, guid: 957040e0b181ff74589c3833b3d99316,
         type: 3}
@@ -271,16 +283,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 498132198936148289, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566863997283508526, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 957040e0b181ff74589c3833b3d99316, type: 3}
 --- !u!4 &905916716062463895 stripped
@@ -300,6 +302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Box (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969685142733947775, guid: 957040e0b181ff74589c3833b3d99316,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7643104464514452714, guid: 957040e0b181ff74589c3833b3d99316,
         type: 3}
@@ -355,16 +362,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 498132198936148289, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7566863997283508526, guid: 957040e0b181ff74589c3833b3d99316,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 957040e0b181ff74589c3833b3d99316, type: 3}

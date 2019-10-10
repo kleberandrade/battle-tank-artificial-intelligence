@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431280524148326}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: FireTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4711,7 +4711,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224291143508111182}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4750,7 +4750,7 @@ GameObject:
   - component: {fileID: 223146465209569470}
   - component: {fileID: 114518401758102944}
   - component: {fileID: 114053393841366546}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4849,7 +4849,7 @@ GameObject:
   - component: {fileID: 224321937688300132}
   - component: {fileID: 114178472604017174}
   - component: {fileID: 114665110371270584}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5032,7 +5032,7 @@ GameObject:
   - component: {fileID: 224672175607820364}
   - component: {fileID: 222513144684219322}
   - component: {fileID: 114605734402597368}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5221,7 +5221,7 @@ GameObject:
   - component: {fileID: 224755474223645754}
   - component: {fileID: 222907429096369392}
   - component: {fileID: 114323773639204828}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5316,7 +5316,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448907371205044}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5621,11 +5621,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de86599c91d1fef46b3ac622948fdfdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Radius: 20
-  m_CullingMask:
+  m_ViewRadius: 0
+  m_ViewAngle: 0
+  m_TargetMask:
     serializedVersion: 2
-    m_Bits: 512
-  m_Targets: []
+    m_Bits: 0
+  m_ObstacleMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_MeshResolution: 0
+  m_EdgeResolveIterations: 0
+  m_EdgeDstThreshold: 0
+  m_MaskCutawayDst: 0.1
+  m_ViewMeshFilter: {fileID: 0}
 --- !u!1 &1664949845980440
 GameObject:
   m_ObjectHideFlags: 0
@@ -5716,7 +5724,7 @@ GameObject:
   - component: {fileID: 224131328921150556}
   - component: {fileID: 222882262017112566}
   - component: {fileID: 114890652452592692}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5869,7 +5877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224243008940031208}
   - component: {fileID: 114628322403032584}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: AimSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10629,7 +10637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224912756316770962}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
