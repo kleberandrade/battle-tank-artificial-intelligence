@@ -1,4 +1,4 @@
-# BattleTankIA
+# Battle Tank IA
 
 BattleTankIA is a programming game, where the goal is to develop a robot battle tank to battle against other tanks in Unity / C#. The robot battles are running in real-time and on-screen. This project is part of my Artificial Intelligence class of the Fatec Americana Digital Games Technology course.
 
@@ -37,7 +37,7 @@ Text ...
 -   UNITY3D. Finite State AI with the Delegate Pattern. Available in <https://unity3d.com/pt/learn/tutorials/topics/navigation/finite-state-ai-delegate-pattern>. Accessed Semptember 21, 2019. 
 -   UNITY3D. Tanks Tutorial. Available in <https://unity3d.com/pt/learn/tutorials/s/tanks-tutorial>. Accessed September 20, 2019.
 
-## Licença
+## License
 
     Copyright 2019 Kleber de Oliveira Andrade
     
