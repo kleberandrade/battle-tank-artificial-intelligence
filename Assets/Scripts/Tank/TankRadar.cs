@@ -59,7 +59,8 @@ public class TankRadar : MonoBehaviour
         m_Targets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, m_ViewRadius, m_TargetMask);
 
-        for (int i = 1; i < targetsInViewRadius.Length; i++)
+        // for (int i = 1 ===> 0
+        for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
@@ -68,7 +69,8 @@ public class TankRadar : MonoBehaviour
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, m_ObstacleMask))
                 {
-                    m_Targets.Add(target.position);
+                    if (!transform.position.Equals(target.position)) 
+                        m_Targets.Add(target.position);
                 }
             }
         }

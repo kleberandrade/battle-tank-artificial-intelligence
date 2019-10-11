@@ -757,6 +757,26 @@ PrefabInstance:
       propertyPath: m_GameManager
       value: 
       objectReference: {fileID: 545539165}
+    - target: {fileID: 6085087900310448762, guid: d02f20ed41ffe614bb9a2726600e8c6d,
+        type: 3}
+      propertyPath: m_Width
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085087900310448762, guid: d02f20ed41ffe614bb9a2726600e8c6d,
+        type: 3}
+      propertyPath: m_Depth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085087900310448762, guid: d02f20ed41ffe614bb9a2726600e8c6d,
+        type: 3}
+      propertyPath: m_ObstacleRate
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085087900310448762, guid: d02f20ed41ffe614bb9a2726600e8c6d,
+        type: 3}
+      propertyPath: m_Noise
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d02f20ed41ffe614bb9a2726600e8c6d, type: 3}
 --- !u!1 &1570422947

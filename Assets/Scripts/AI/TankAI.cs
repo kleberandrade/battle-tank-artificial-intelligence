@@ -44,6 +44,23 @@ public class TankAI : MonoBehaviour
         m_MovementScript.Turn(rotate);
     }
 
+    public Vector3 Direction(Vector3 target)
+    {
+        return target - transform.position; ;
+    }
+
+    public float Angle(Vector3 target)
+    {
+        Vector3 targetDir = Direction(target);
+        return Vector3.Angle(targetDir, transform.forward);
+    }
+
+    public void LookAt(Vector3 target)
+    {
+        float angle = Angle(target);
+        Rotate(angle);
+    }
+
     public void SelfDestruction()
     {
         m_HealthScript.TakeDamage(100.0f);    
