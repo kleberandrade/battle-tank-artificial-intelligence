@@ -52,13 +52,20 @@ public class TankAI : MonoBehaviour
     public float Angle(Vector3 target)
     {
         Vector3 targetDir = Direction(target);
-        return Vector3.Angle(targetDir, transform.forward);
+        return Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
     }
 
     public void LookAt(Vector3 target)
     {
         float angle = Angle(target);
-        Rotate(angle);
+        if (Mathf.Abs(angle) > 0.1f)
+        {
+            Rotate(-angle);
+        }
+        else
+        {
+            Rotate(0.0f);
+        }
     }
 
     public void SelfDestruction()
