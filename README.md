@@ -1,4 +1,4 @@
-# Battle Tank IA
+# Battle Tank AI
 
 BattleTankIA is a programming game, where the goal is to develop a robot battle tank to battle against other tanks in Unity / C#. The robot battles are running in real-time and on-screen. This project is part of my Artificial Intelligence class of the Fatec Americana Digital Games Technology course.
 
