@@ -30,6 +30,11 @@ Text ...
 
 Text ...
 
+## Acknowledgment
+
+-   Ricardo Moura Cunha, student at Fatec Americana by hover tank modeling
+-   Unity 3D, by tanks tutorial
+
 ## References
 
 -   ORKIN, JEFF. Goal-Oriented Action Planning (GOAP). Available in <http://alumni.media.mit.edu/~jorkin/goap.html>. Accessed September 20, 2019.
