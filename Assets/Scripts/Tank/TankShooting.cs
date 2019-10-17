@@ -43,6 +43,17 @@ public class TankShooting : MonoBehaviour
         m_FireButton = "Fire" + m_PlayerNumber;
     }
 
+    private void OnEnable()
+    {
+        if (m_TurretTransform) m_TurretTransform.rotation = transform.rotation;
+        StopFiring();
+    }
+
+    private void OnDisable()
+    {
+        StopFiring();
+    }
+
     private void Update()
     {
         if (m_Type == TankType.Human)
@@ -81,5 +92,12 @@ public class TankShooting : MonoBehaviour
 
 		m_ShootingAudio.clip = m_FireClip;
 		m_ShootingAudio.Play();
+    }
+
+    public void FireAndExplode()
+    {
+        Rigidbody shellInstance = Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+        ShellExplosion shellExplosion = shellInstance.GetComponent<ShellExplosion>();
+        shellExplosion.Explode(15.0f);
     }
 }

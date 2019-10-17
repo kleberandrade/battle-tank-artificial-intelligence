@@ -30,6 +30,21 @@ public class TankRadar : MonoBehaviour
     public MeshFilter m_ViewMeshFilter;
     private Mesh m_ViewMesh;
 
+    private void OnEnable()
+    {
+        m_Targets.Clear();
+
+        StopAllCoroutines();
+        StartCoroutine("FindTargetsWithDelay", .2f);
+    }
+
+    private void OnDisable()
+    {
+        m_Targets.Clear();
+
+        StopAllCoroutines();
+    }
+
     private void Start()
     {
         m_ViewMesh = new Mesh();
@@ -37,6 +52,7 @@ public class TankRadar : MonoBehaviour
 
         m_ViewMeshFilter.mesh = m_ViewMesh;
 
+        StopAllCoroutines();
         StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
@@ -104,7 +120,6 @@ public class TankRadar : MonoBehaviour
                 }
 
             }
-
 
             viewPoints.Add(newViewCast.point);
             oldViewCast = newViewCast;

@@ -45,15 +45,12 @@ public class TankHealth : MonoBehaviour
 		}
     }
 
-
     private void SetHealthUI()
     {
         // Adjust the value and colour of the slider.
 		m_Slider.value = m_CurrentHealth;
-
 		m_FillImage.color = Color.Lerp(m_ZeroHealthColor, m_FullHealthColor, m_CurrentHealth / m_StartingHealth);
     }
-
 
     private void OnDeath()
     {
@@ -66,5 +63,12 @@ public class TankHealth : MonoBehaviour
 		m_ExplosionAudio.Play();
 
 		gameObject.SetActive(false);
+    }
+
+    public void SelfDestruction()
+    {
+        TakeDamage(100.0f);
+        TankShooting shooting = GetComponent<TankShooting>();
+        shooting.FireAndExplode();
     }
 }

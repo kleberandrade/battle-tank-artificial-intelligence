@@ -40,6 +40,8 @@ public class TankAI : MonoBehaviour
     #endregion
 
     #region [ Turret Methods ]
+    public Vector3 TurretDirection => m_ShootingScript.m_FireTransform.forward;
+
     public void TurretRotate(float rotate)
     {
         m_ShootingScript.Rotate(rotate);
@@ -111,7 +113,7 @@ public class TankAI : MonoBehaviour
     /// </summary>
     public void SelfDestruction()
     {
-        m_HealthScript.TakeDamage(100.0f);
+        m_HealthScript.SelfDestruction();
     }
     #endregion
 

@@ -13,12 +13,21 @@ public class TankManager
 
     private TankMovement m_Movement;       
     private TankShooting m_Shooting;
+    private TankHealth m_Health;
+    private TankRadar m_Radar;
+    private TankAI m_TankAI;
+
     private GameObject m_CanvasGameObject;
 
     public void Setup()
     {
         m_Movement = m_Instance.GetComponent<TankMovement>();
         m_Shooting = m_Instance.GetComponent<TankShooting>();
+        m_Health = m_Instance.GetComponent<TankHealth>();
+        m_Radar = m_Instance.GetComponent<TankRadar>();
+        m_TankAI = m_Instance.GetComponent<TankAI>();
+
+
         m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
         m_Movement.m_PlayerNumber = m_PlayerNumber;
@@ -38,6 +47,10 @@ public class TankManager
     {
         m_Movement.enabled = false;
         m_Shooting.enabled = false;
+        m_Health.enabled = false;
+        m_Radar.enabled = false;
+
+        if (m_TankAI) m_TankAI.enabled = false;
 
         m_CanvasGameObject.SetActive(false);
     }
@@ -46,6 +59,9 @@ public class TankManager
     {
         m_Movement.enabled = true;
         m_Shooting.enabled = true;
+        m_Health.enabled = true;
+        m_Radar.enabled = true;
+        if (m_TankAI) m_TankAI.enabled = true;
 
         m_CanvasGameObject.SetActive(true);
     }
@@ -56,6 +72,7 @@ public class TankManager
         m_Instance.transform.rotation = Quaternion.Euler(Vector3.up * 360.0f);
 
         m_Instance.SetActive(false);
+
         m_Instance.SetActive(true);
     }
 }
