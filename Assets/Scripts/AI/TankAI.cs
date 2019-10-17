@@ -2,29 +2,21 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+[RequireComponent(typeof(TankMovement))]
+[RequireComponent(typeof(TankShooting))] 
+[RequireComponent(typeof(TankHealth))]
+[RequireComponent(typeof(TankRadar))]
 public class TankAI : MonoBehaviour
 {
+    #region [ Fields ]
     private TankMovement m_MovementScript;
     private TankShooting m_ShootingScript;
     private TankHealth m_HealthScript;
     private TankRadar m_RadarScript;
     private NavMeshAgent m_Agent;
+    #endregion
 
-    public float Health => m_HealthScript.Health;
-
-    public Vector3 Position => m_MovementScript.Position;
-
-    public List<Vector3> Targets => m_RadarScript.m_Targets;
-
-    public bool HasTargetInRange => Targets.Count > 0;
-
-    public NavMeshAgent Agent => m_Agent;
-
-    public float DistanceToTarget(Vector3 targetPosition)
-    {
-        return Vector3.Distance(targetPosition, Position);
-    }
-   
+    #region [ Unity Methods ]
     private void Awake()
     {
         m_MovementScript = GetComponent<TankMovement>();
@@ -39,6 +31,28 @@ public class TankAI : MonoBehaviour
         Move(0.0f);
         Rotate(0.0f);
     }
+    #endregion
+
+    #region [ Targets Methods ]
+    public List<Vector3> Targets => m_RadarScript.m_Targets;
+
+    public bool HasTargetInRange => Targets.Count > 0;
+    #endregion
+
+    #region [ Turret Methods ]
+    public void TurretRotate(float rotate)
+    {
+        m_ShootingScript.Rotate(rotate);
+    }
+
+    public void TurretLookAt(Vector3 target)
+    {
+        m_ShootingScript.LookAt(target);
+    }
+    #endregion
+
+    #region [ Manual Movement ]
+    public Vector3 Position => m_MovementScript.Position;
 
     public void Move(float movement)
     {
@@ -49,18 +63,6 @@ public class TankAI : MonoBehaviour
     {
         m_MovementScript.Turn(rotate);
     }
-
-    public Vector3 Direction(Vector3 target)
-    {
-        return target - transform.position; ;
-    }
-
-    public float Angle(Vector3 target)
-    {
-        Vector3 targetDir = Direction(target);
-        return Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
-    }
-
     public void LookAt(Vector3 target)
     {
         float angle = Angle(target);
@@ -70,12 +72,23 @@ public class TankAI : MonoBehaviour
             Rotate(-angle);
         }
     }
+    #endregion
 
-    public void SelfDestruction()
+    #region [ NavMesh Movement ]
+    public NavMeshAgent Agent => m_Agent;
+
+    public bool SetDestination(Vector3 target)
     {
-        m_HealthScript.TakeDamage(100.0f);    
+        return m_Agent.SetDestination(target);
     }
 
+    public void StopMotionToDestination()
+    {
+        m_Agent.isStopped = true;
+    }
+    #endregion
+
+    #region [ Fire Methods ]
     public void StartFire()
     {
         m_ShootingScript.StartFiring();
@@ -85,4 +98,53 @@ public class TankAI : MonoBehaviour
     {
         m_ShootingScript.StopFiring();
     }
+    #endregion
+
+    #region [ Health Methods ]
+    /// <summary>
+    /// Life of your tank
+    /// </summary>
+    public float Health => m_HealthScript.Health;
+
+    /// <summary>
+    /// Self destruction
+    /// </summary>
+    public void SelfDestruction()
+    {
+        m_HealthScript.TakeDamage(100.0f);
+    }
+    #endregion
+
+    #region [ Helpers Methods ]
+    /// <summary>
+    /// Distance between your tank and another position
+    /// </summary>
+    /// <param name="target">Target distance</param>
+    /// <returns></returns>
+    public float DistanceToTarget(Vector3 target)
+    {
+        return Vector3.Distance(target, Position);
+    }
+
+    /// <summary>
+    /// Direction between your tank and another position
+    /// </summary>
+    /// <param name="target">Target direction</param>
+    /// <returns></returns>
+    public Vector3 Direction(Vector3 target)
+    {
+        return target - transform.position;
+    }
+
+    /// <summary>
+    /// Angle between your tank and another position
+    /// </summary>
+    /// <param name="target">Target position</param>
+    /// <returns></returns>
+    public float Angle(Vector3 target)
+    {
+        Vector3 targetDir = Direction(target);
+        return Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
+    }
+    #endregion
 }

@@ -102,11 +102,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043745617887602}
   m_LocalRotation: {x: 0.08715596, y: -0, z: -0, w: -0.9961947}
-  m_LocalPosition: {x: 0, y: 1.7, z: 1.35}
+  m_LocalPosition: {x: -0.000010554959, y: 0.6203588, z: 1.3753214}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4298133497090106}
-  m_RootOrder: 5
+  m_Father: {fileID: 4624120542557962}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 350, y: 0, z: 0}
 --- !u!1 &1099307488062334
 GameObject:
@@ -392,8 +392,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2.5
-      minScalar: 0.5
+      scalar: 1.5
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -5048,7 +5048,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.000010554959, y: 1.0796412, z: -0.025321364}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4431280524148326}
   m_Father: {fileID: 4688399815506062}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5406,7 +5407,6 @@ Transform:
   - {fileID: 4899983827095252}
   - {fileID: 4385030854560752}
   - {fileID: 224371607840471870}
-  - {fileID: 4431280524148326}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5686,10 +5686,13 @@ MonoBehaviour:
   m_Type: 1
   m_PlayerNumber: 1
   m_Shell: {fileID: 54675685352697740, guid: dccd4749b7a314e509df88d15477335a, type: 3}
-  m_FireTransform: {fileID: 4431280524148326}
   m_ShootingAudio: {fileID: 82611501352753784}
   m_FireClip: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
   m_MaxChargeTime: 0.75
+  m_RotateSpeed: 180
+  m_FireTransform: {fileID: 4431280524148326}
+  m_TurretTransform: {fileID: 4624120542557962}
+  m_TankTransform: {fileID: 4298133497090106}
   m_CurrentLaunchForce: 20
 --- !u!114 &3586468932249532997
 MonoBehaviour:
@@ -6369,8 +6372,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 2.5
-      minScalar: 0.5
+      scalar: 1.5
+      minScalar: 0.25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10726,7 +10729,7 @@ ParticleSystemRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89

@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DampTime: 0.2
   m_ScreenEdgeBuffer: 4
-  m_MinSize: 6.5
+  m_MinSize: 7
   m_Targets: []
 --- !u!4 &791033619
 Transform:
@@ -865,7 +865,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: TANKS!
+  m_Text: "BATTLE \nTANKS AI"
 --- !u!222 &1570422951
 CanvasRenderer:
   m_ObjectHideFlags: 0
