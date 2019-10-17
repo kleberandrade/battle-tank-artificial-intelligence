@@ -34,6 +34,12 @@ public class TankAI : MonoBehaviour
         m_Agent = GetComponent<NavMeshAgent>();
     }
 
+    private void Update()
+    {
+        Move(0.0f);
+        Rotate(0.0f);
+    }
+
     public void Move(float movement)
     {
         m_MovementScript.Move(movement);
@@ -58,13 +64,10 @@ public class TankAI : MonoBehaviour
     public void LookAt(Vector3 target)
     {
         float angle = Angle(target);
-        if (Mathf.Abs(angle) > 0.1f)
+        if (Mathf.Abs(angle) > 3.0f)
         {
+            Debug.Log(angle);
             Rotate(-angle);
-        }
-        else
-        {
-            Rotate(0.0f);
         }
     }
 

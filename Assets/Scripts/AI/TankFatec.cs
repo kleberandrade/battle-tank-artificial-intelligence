@@ -14,13 +14,8 @@ public class TankFatec : MonoBehaviour
     private void Update()
     {
         if (m_Tank.HasTargetInRange) {
-
             Vector3 target = m_Tank.Targets[0];
-
-            Debug.Log(m_Tank.Angle(target));
-
-
-            m_Tank.LookAt(target, 0.1f);
+            m_Tank.LookAt(target);
         }
     }
 }

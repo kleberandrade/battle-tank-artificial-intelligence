@@ -23,6 +23,8 @@ public class TankMovement : MonoBehaviour
     private float m_OriginalPitch;
 
     public Vector3 Position => m_Rigidbody.transform.position;
+
+    public float TurnSpeed => m_TurnSpeed;
     
     private void Awake()
     {
@@ -56,7 +58,7 @@ public class TankMovement : MonoBehaviour
         {
             m_MovementInputValue = Input.GetAxis(m_MovementAxisName);
             m_TurnInputValue = Input.GetAxis(m_TurnAxisName);
-        }
+        } 
 
 		EngineAudio();
     }
