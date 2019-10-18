@@ -90,6 +90,9 @@ public class TankMovement : MonoBehaviour
     {
 		Move();
 		Turn();
+
+        m_MovementInputValue = 0.0f;
+        m_TurnInputValue = 0.0f;
     }
 
     public void Move(float movement)

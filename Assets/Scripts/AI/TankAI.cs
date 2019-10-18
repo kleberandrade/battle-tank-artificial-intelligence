@@ -25,12 +25,6 @@ public class TankAI : MonoBehaviour
         m_RadarScript = GetComponent<TankRadar>();
         m_Agent = GetComponent<NavMeshAgent>();
     }
-
-    private void Update()
-    {
-        Move(0.0f);
-        Rotate(0.0f);
-    }
     #endregion
 
     #region [ Targets Methods ]
